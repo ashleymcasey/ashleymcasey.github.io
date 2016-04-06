@@ -1815,13 +1815,13 @@ select {
   border-radius: 0;
   position: relative;
   color: #0a0a0a;
-  background-color: white; }
+  /*background-color: white;*/ }
   .callout > :first-child {
 	margin-top: 0; }
   .callout > :last-child {
 	margin-bottom: 0; }
   .callout.primary {
-	background-color: #FFBB1A; }
+	/*background: url("../images/pb_cover.png") center center no-repeat;*/ }
   .callout.secondary {
 	background-color: #ebebeb; }
   .callout.success {
@@ -1840,7 +1840,6 @@ select {
 	padding-right: 3rem;
 	padding-bottom: 3rem;
 	padding-left: 3rem;
-	background: url("../images/pb_cover.png") center center no-repeat;
 	background-size: cover;
 	min-height: 450px; }
 
