@@ -477,7 +477,7 @@ h4,
 h5,
 h6 {
   font-family: 'Raleway', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
   color: inherit;
   text-rendering: optimizeLegibility;
@@ -495,7 +495,8 @@ h6 {
 	line-height: 0; }
 
 h1 {
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  text-shadow: 1px 1px #274A85; }
 
 h2 {
   font-size: 1.25rem; }
@@ -516,7 +517,7 @@ h6 {
   h1 {
 	font-size: 3rem; }
   h2 {
-	font-size: 2.5rem; }
+	font-size: 1.3rem; }
   h3 {
 	font-size: 1.9375rem; }
   h4 {
@@ -527,12 +528,12 @@ h6 {
 	font-size: 1rem; } }
 
 a {
-  color: #FFBB1A;
+  color: #153A5B;
   text-decoration: none;
   line-height: inherit;
   cursor: pointer; }
   a:hover, a:focus {
-	color: #A4703B; }
+	color: #274A85; }
   a img {
 	border: 0; }
 
@@ -640,6 +641,36 @@ kbd {
 
 .text-justify {
   text-align: justify; }
+
+// colors
+
+.pink {
+  color: #F24E53; }
+.pink-bg {
+  background-color: #F24E53; }
+
+.sky {
+  color: #82C2D1; }
+.sky-bg {
+  background-color: #82C2D1; }
+
+.yellow {
+  color: #FC9A00; }
+.yellow-bg {
+  background-color: #FC9A00;
+}
+
+.green {
+  color: #739C1B; }
+.green-bg {
+  background-color: #739C1B;
+}
+
+.blue {
+  color: #274A85; }
+.blue-bg {
+  background-color: #274A85;
+}
 
 @media screen and (min-width: 40em) {
   .medium-text-left {
@@ -1666,17 +1697,17 @@ select {
   padding: 0.85em 1em;
   margin: 0 0 1rem 0;
   font-size: 0.9rem;
-  background-color: #2199e8;
   color: #fefefe; }
   [data-whatinput='mouse'] .button {
 	outline: 0; }
   .button:hover, .button:focus {
-	background-color: #1583cc;
+	opacity: 0.9;
 	color: #fefefe; }
   .button.tiny {
-	font-size: 0.6rem;
+	font-size: 0.8rem;
 	border-radius: 15px;
-	font-weight: 400; }
+	font-weight: 600;
+	}
   .button.small {
 	font-size: 0.75rem; }
   .button.large {
