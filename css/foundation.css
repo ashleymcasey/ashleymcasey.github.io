@@ -771,6 +771,9 @@ kbd {
   .row .row {
 	margin-left: -0.625rem;
 	margin-right: -0.625rem; }
+  .spacer-top {
+    padding-top: 30px;
+  }
 	@media screen and (min-width: 40em) {
 	  .row .row {
 		margin-left: -0.9375rem;
@@ -1512,6 +1515,10 @@ textarea {
 	outline: none;
 	box-shadow: 0 0 5px #cacaca;
 	transition: box-shadow 0.5s, border-color 0.25s ease-in-out; }
+
+[type='text'] {
+  height: 3.5rem;
+}
 
 textarea {
   max-width: 100%; }

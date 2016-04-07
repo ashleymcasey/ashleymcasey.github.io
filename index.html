@@ -13,24 +13,36 @@
 	<body>
 	<!-- Masthead -->
 	<div class="callout large primary">
-    <div class="row column text-center">
-      <h1>Adventure Time</h1>
-    </div>
+      <div class="row column text-center">
+          <h1>Adventure Time</h1>
+      </div>
   </div>
   <!-- Rotating Images -->
   <div class="background-image toggle-image first-image show"></div>
   <div class="background-image toggle-image second-image"></div>
   <div class="background-image toggle-image third-image"></div>
-	
+  <!-- Gender Tags -->
   <div class="row column text-center">
-    <a class="tiny button green-bg">Tag Sample 1</a>
-    <a class="tiny button pink-bg">Tag Sample 2</a>
-    <a class="tiny button sky-bg">Tag Sample 3</a>
-  <label for="query">
-    <textarea id="query" type="text" placeholder="Search Character Names"></textarea>
-    <button id="search">Search</button>
-  </label>
+      <a class="tiny button green-bg">Male</a>
+      <a class="tiny button pink-bg">Female</a>
+      <a class="tiny button yellow-bg">Gender Fluid</a>
   </div>
+  <!-- Character Search -->
+  <div class="row spacer-top">
+      <div class="large-6 large-centered text-center columns">
+          <div class="row collapse">
+              <div class="small-10 columns">
+                  <label for="query">
+                  <input id="query" type="text" placeholder="Character Name"></input>
+                  </label>
+              </div>
+              <div class="small-2 columns">
+                  <a id="search" type="submit" class="button large postfix sky-bg">Search</a>
+              </div>
+          </div>
+      </div>
+  </div>
+
   <div class="row column">
     <hr>
   </div>
