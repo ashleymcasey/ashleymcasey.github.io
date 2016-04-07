@@ -118,7 +118,7 @@ dfn {
    * contexts in Firefox 4+, Safari, and Chrome.
    */
 h1 {
-  font-size: 2em;
+  font-size: 8rem;
   margin: 0.67em 0; }
 
 /**
@@ -476,7 +476,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'crushed', helvetica, sans-serif;
   font-weight: 500;
   font-style: normal;
   color: inherit;
@@ -503,7 +503,7 @@ h1 {
   font-family: 'crushed', helvetica, sans-serif; }
 
 h2 {
-  font-size: 1.25rem; }
+  font-size: 1.75rem; }
 
 h3 {
   font-size: 1.1875rem; }
@@ -517,9 +517,9 @@ h5 {
 h6 {
   font-size: 1rem; }
 
-@media screen and (min-width: 40em) {
+@media screen and (max-width: 700px) {
   h1 {
-	font-size: 8rem; }
+	font-size: 5.5rem; }
   h2 {
 	font-size: 1.3rem; }
   h3 {
@@ -1848,9 +1848,9 @@ select {
 	padding-left: 0.5rem; }
   .callout.large {
 	padding-top: 3rem;
-	padding-right: 3rem;
-	padding-bottom: 3rem;
-	padding-left: 3rem;
+	padding-right: 0.5rem;
+	padding-bottom: 1rem;
+	padding-left: 0.5rem;
 	background-size: cover;
 	min-height: 450px; }
 
