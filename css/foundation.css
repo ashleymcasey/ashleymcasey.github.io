@@ -495,8 +495,12 @@ h6 {
 	line-height: 0; }
 
 h1 {
-  font-size: 1.5rem;
-  text-shadow: 1px 1px #274A85; }
+  color: white;
+  font-size: 8rem;
+  line-height:0.95em;
+  padding-top: 20px;
+  text-shadow: 6px 4px #274A85;
+  font-family: 'crushed', helvetica, sans-serif; }
 
 h2 {
   font-size: 1.25rem; }
@@ -515,7 +519,7 @@ h6 {
 
 @media screen and (min-width: 40em) {
   h1 {
-	font-size: 3rem; }
+	font-size: 8rem; }
   h2 {
 	font-size: 1.3rem; }
   h3 {

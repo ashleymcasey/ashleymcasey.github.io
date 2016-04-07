@@ -1,3 +1,4 @@
+
 .background-image {
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -14,21 +15,27 @@
 	transition: opacity 1s ease-in-out;
 }
 
-/* styles for images */
+/* Styles for images */
 .first-image {
-	background-image: url('../images/pb_cover.png');
+	background-image: url('../images/masthead_01.jpg');
 	z-index: -3;
 	opacity: 0;
 }
 
 .second-image {
-	background-image: url('../images/fin_cover.jpg');
+	background-image: url('../images/masthead_02.jpg');
 	z-index: -2;
 	opacity: 0;
 }
 
-/* opacity set will show image, originally set to 0 as above */
+.third-image {
+	background-image: url('../images/masthead_03.jpg');
+	z-index: -1;
+	opacity: 0;
+}
+
 .first-image.show,
-.second-image.show{
+.second-image.show,
+.third-image.show {
 	opacity: 1;
 }

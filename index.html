@@ -6,27 +6,30 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <title>GA-JS / Adventure Time API</title>
 	    <link rel="stylesheet" href="css/foundation.css">
-	    <link rel="stylesheet" href="css/app.css">
 	    <link rel="stylesheet" href="css/rotating-images.css">
 	    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700' rel='stylesheet' type='text/css'>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      <link href='https://fonts.googleapis.com/css?family=Lilita+One|Crushed' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 	<!-- Masthead -->
 	<div class="callout large primary">
     <div class="row column text-center">
       <h1>Adventure Time</h1>
-      <h2 class="lead">C'mon, grab your friends&hellip;</h2>
     </div>
   </div>
   <!-- Rotating Images -->
   <div class="background-image toggle-image first-image show"></div>
   <div class="background-image toggle-image second-image"></div>
+  <div class="background-image toggle-image third-image"></div>
 	
   <div class="row column text-center">
     <a class="tiny button green-bg">Tag Sample 1</a>
     <a class="tiny button pink-bg">Tag Sample 2</a>
     <a class="tiny button sky-bg">Tag Sample 3</a>
+  <label for="query">
+    <textarea id="query" type="text" placeholder="Search Character Names"></textarea>
+    <button id="search">Search</button>
+  </label>
   </div>
   <div class="row column">
     <hr>
@@ -34,13 +37,14 @@
 
   <div class="row small-up-1 medium-up-2 large-up-3">
     <div class="column">
-      <h2><a href="http://foundation.zurb.com/docs">Lumpy Space Princess</a></h2>
-      <p><img src="http://placehold.it/400x370&text=LSP Img Here" alt="LSP"></p>
-				<a class="tiny button green-bg">Tag Sample 1</a>
-				<a class="tiny button pink-bg">Tag Sample 2</a>
-      <p>API content to go here</p>
+      <h2 id="name"><a href="http://foundation.zurb.com/docs"></a></h2>
+      <p><img id="character" alt=""></p>
+				<a id="sex" class="tiny button green-bg"></a>
+        <p><b>Relatives: </b><a id="link" class="myLink"></a></p>
     </div>  
   </div>
+  <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
   <script src="js/rotating-images.js"></script>
+  <script src="js/api.js"></script>
   </body>
 </html>
