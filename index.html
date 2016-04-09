@@ -6,6 +6,7 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <title>GA-JS / Adventure Time API</title>
 	    <link rel="stylesheet" href="css/foundation.css">
+      <link rel="stylesheet" href="css/foundation-flex.css">
 	    <link rel="stylesheet" href="css/rotating-images.css">
 	    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700' rel='stylesheet' type='text/css'>
       <link href='https://fonts.googleapis.com/css?family=Crushed' rel='stylesheet' type='text/css'>
@@ -13,7 +14,7 @@
 	<body>
 	<!-- Masthead -->
 	<div class="callout large primary">
-      <div class="row column text-center">
+      <div class="row column align-center">
           <h1>Adventure Time</h1>
       </div>
   </div>
@@ -22,22 +23,19 @@
   <div class="background-image toggle-image second-image"></div>
   <div class="background-image toggle-image third-image"></div>
   <!-- Gender Placeholder Tags -->
-  <div class="row column text-center">
+  <div class="row column align-center">
       <a class="tiny button green-bg">Male</a>
       <a class="tiny button pink-bg">Female</a>
       <a class="tiny button yellow-bg">Gender Fluid</a>
   </div>
   <!-- Character Search -->
   <div class="row spacer-top">
-      <div class="large-6 large-centered small-10 text-center columns">
+      <div class="large-6 large-centered small-10 align-center columns">
           <div class="row collapse">
-              <div class="small-10 columns">
-                  <label for="query">
-                  <input id="query" type="text" placeholder="Character Name"></input>
-                  </label>
-              </div>
-              <div class="small-2 columns">
-                  <a id="search" type="submit" class="button large postfix sky-bg">Search</a>
+              <div class="small-12 columns">
+                  <label for="search-character"></label>
+                  <input type="text" id="search-character" placeholder="Character Name Search">
+                  <span class="list-count"></span>
               </div>
           </div>
       </div>
@@ -47,23 +45,23 @@
     <hr>
   </div>
   <!-- Handlebars application here to populate results -->
-  <div class="row small-up-1 medium-up-2 large-up-3" id="multiple-characters">
+  <div class="row align-stretch small-up-1 medium-up-2 large-up-3" id="multiple-characters">
   </div>
-
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+  <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
   <script src="js/rotating-images.js"></script>
   <script src="js/api.js"></script>
 
   <!-- Base Character Template -->
 <script id="character-template" type="text/x-handlebars-template">
-  <div id="multiple-characters" class="columns text-center">
+  <div id="multiple-characters" class="columns text-center results-container">
       <h2 id="name" class="name"><a href={{link}} target="_blank">{{name}}</a></h2>
-        <p><img id="character" alt="{{name}}" src={{image}}></p>
+        <p class="name-container"><img id="character" class="image" alt="{{name}}" src={{image}}></p>
         <a id="sex" class="tiny button green-bg text">{{sex}}</a>
-        <p class="text-left" id="link"><strong>Relatives: </strong>{{relativeNames}}</p>
+        <p class="text-left text-container" id="link"><strong>Relatives: </strong>{{relativeNames}}</p>
         <p class="text-left" id="species"><strong>Species: </strong>{{speciesType}}</p>
   </div> 
 </script>

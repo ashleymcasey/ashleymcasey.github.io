@@ -48,61 +48,28 @@ $(function onPageLoad() {
 				$('#multiple-characters').html(characterListHtml);
 		})
 
+		// SEARCH FUNCTIONALITY  
+  		$("#search-character").keyup(function () {
+  
+			var searchEntry = $("#search-character").val();    
+			var searchKeyEntry = searchEntry.replace(/ /g, "'):containsi('")
+    
+			// making entries not case sensitive 
+  			$.extend($.expr[':'], {
+  			'containsi': function(elem, i, match, array)
+  			{
+    		return (elem.textContent || elem.innerText || '').toLowerCase()
+    		.indexOf((match[3] || "").toLowerCase()) >= 0;
+  			}
+		});
 
-	// todo - make above a function to eliminate repition
-	// Whenever the search button is clicked, the onSearch function will get called.
-	$('#search').click(function onSearch() {
-
-		// This gets whatever the user has typed into the query textbox.
-		var query = $('#query').val();
-		/*
-		fetch(url)
-		Adding on whatever the value of the `query` variable is
-		as a URL parameter, to search for whatever the user types in.
-
-		fetch(url).then(function onApiResponse(response) { do something }), 
-		we're saying that whenever the AJAX request to `url` finishes, call the `onApiResponse`
-		function we passed into `then`.
-		*/
-
-		fetch('https://cors-anywhere.herokuapp.com/http://adventuretimeapi.com/api/v1/characters/?search=' + query)
-			.then(function onApiResponse(response) {
-
-				/*
-				The `response` we get from `fetch` is the full HTTP response, so it includes more
-				than just the raw JSON response. This will give us the API response
-				as a plain old javascript object.
-				*/
-				return response.json();
-
-			})
-			.then(function onJsonParsed(charLoad) {
-
-				console.log(charLoad);
-
-				var characterTemplateSource = $('#character-template').html();
-				var characterTemplate = Handlebars.compile(characterTemplateSource);
-
-				var characterListTemplateSource = $('#character-list-template').html();
-				var characterListTemplate = Handlebars.compile(characterListTemplateSource);
-				Handlebars.registerPartial('character', characterTemplateSource);
-
-
-				for(var i = 0; i < charLoad.results.length; i++) {
-					var character = charLoad.results[i];
-					character.relativeNames = character.relatives_many.map(function(relative) {
-					return relative.name;
-					}).join(", ");
-				}
-
-				charLoad.results[0].relatives_many.map(function(relative) {
-					return relative.name;
-				}).join(", ");
-				var characterListHtml = characterListTemplate(charLoad);
-
-				$('#multiple-characters').html(characterListHtml);
-			});
-
+  		// showing and hiding the character results based off entry
+	    $("#multiple-characters h2").not(":containsi('" + searchKeyEntry + "')").each(function(e) {
+	      $(this).parent().hide('div');
+	    });
+	    
+	    $("#multiple-characters h2:containsi('" + searchKeyEntry + "')").each(function(e) {
+	      $(this).parent().show('div');
+	    });   
 	});
-
 });
