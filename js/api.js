@@ -70,6 +70,22 @@ $(function onPageLoad() {
 	    
 	    $("#multiple-characters h2:containsi('" + searchKeyEntry + "')").each(function(e) {
 	      $(this).parent().show('div');
-	    });   
-	});
+	    });
+
+		function searchList() {                
+    	//array of list items
+    	var listArray = [];
+  
+     	$("#multiple-characters h2").each(function() {
+    	var listText = $(this).text().trim();
+      	listArray.push(listText);
+    	});
+    
+    	$('#search-character').autocomplete({
+        source: listArray
+    	});   
+  		}
+                                   
+  		searchList();
+		});
 });
