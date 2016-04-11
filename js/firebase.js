@@ -3,11 +3,13 @@
 var firebaseURL = 'https://acasey.firebaseio.com/';
 
 // update the likeCounts shown in a <span> beside each blogpost
-var postDivs = document.querySelectorAll('.results-container');
-
+function callLikeCount() {
+var postDivs = $('.results-container');
+console.log(postDivs);
 for (var i = 0; i < postDivs.length; i++) {
-    var postID = postDivs[i].id.replace('character', '');
+    var postID = postDivs.eq(i).data('id');
     var numLikes = getLikeCount(postID);
+    }
 }
 
 // this function grabs the likeCount for a particular post from the Firebase

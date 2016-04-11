@@ -4,6 +4,7 @@ $(function onPageLoad() {
 	// fetch url page size set to 1000 after trial and error of getting all results to show based off conditionals set below
 	fetch('https://cors-anywhere.herokuapp.com/http://adventuretimeapi.com/api/v1/characters/?page_size=1000')
 		.then(function onApiResponse(response) {
+			$(".loader").fadeOut("slow");
 			return response.json();
 		})
 
@@ -46,6 +47,7 @@ $(function onPageLoad() {
 				var characterListHtml = characterListTemplate(charLoad);
 
 				$('#multiple-characters').html(characterListHtml);
+				callLikeCount();
 		})
 
 		// SEARCH FUNCTIONALITY  

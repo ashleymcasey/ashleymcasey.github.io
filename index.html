@@ -11,8 +11,11 @@
 	    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700' rel='stylesheet' type='text/css'>
       <link href='https://fonts.googleapis.com/css?family=Crushed' rel='stylesheet' type='text/css'>
       <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+      <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+  </script>
 	</head>
 	<body>
+  <div class="loader"></div>
 	<!-- Masthead -->
 	<div class="callout large primary">
       <div class="row column align-center">
@@ -40,15 +43,14 @@
           </div>
       </div>
   </div>
-  <!-- Row Divider --> 
-  <div class="row column">
-    <hr>
-  </div>
   <!-- Handlebars application here to populate results -->
   <div class="row align-stretch small-up-1 medium-up-2 large-up-3" id="multiple-characters">
   </div>
+  <!-- Footer -->
+  <div class="row column footer-container align-center">
+      <p>GA-JS / Adventure Time API</p>
+  </div>
   <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
   <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
   <script src="js/rotating-images.js"></script>
@@ -57,14 +59,14 @@
   <script src="js/api.js"></script>
   <!-- Base Character Template -->
   <script id="character-template" type="text/x-handlebars-template">
-    <div id="multiple-characters" class="columns text-center results-container" data-sex="{{sex}}">
+    <div id="multiple-characters" class="columns text-center results-container" data-id="{{id}}" data-sex="{{sex}}">
         <h2 id="name" class="name"><a href={{link}} target="_blank">{{name}}</a></h2>
           <p class="name-container"><img id="character" class="image" alt="{{name}}" src={{image}}></p>
           <a id="sex" class="tiny hollow button disabled text">{{sex}}</a>
           <p class="text-left text-container" id="link"><strong>Relatives: </strong>{{relativeNames}}</p>
           <p class="text-left" id="species"><strong>Species: </strong>{{speciesType}}</p>
           <p id="character{{id}}" class="text-left">
-          <button class="tiny button pink-bg radius" onclick="likePost('{{id}}')">Like</button>&nbsp;<span class="like-count"></span>
+          <button class="tiny button success" onclick="likePost('{{id}}')">Like</button>&nbsp;<span class="like-count"></span>
           <p>
     </div> 
   </script>
@@ -77,17 +79,16 @@
 {{/each}}
 </script>
 
-<!-- Script to save to firebase 
+
 <script>
       var myDataRef = new Firebase('https://acasey.firebaseio.com/');
       $('.search-character').keypress(function (e) {
         if (e.keyCode == 13) {
           var text = $('.search-character').val();
           myDataRef.push({search: text});
-          $('.search-character').val('');
         }
       });
-</script> -->
+</script> 
 
   </body>
 </html>
