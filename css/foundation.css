@@ -1695,7 +1695,6 @@ select {
 	color: #fefefe; }
   .button.tiny {
 	font-size: 0.8rem;
-	border-radius: 15px;
 	font-weight: 600;
   margin: 0 2px;
 	}
@@ -1739,10 +1738,19 @@ select {
 	  background-color: #da3116;
 	  color: #fefefe; }
   .button.hollow {
-	border: 1px solid #2199e8;
-	color: #2199e8; }
+	border: 1px solid #cccccc;
+	color: #cccccc; }
 	.button.hollow, .button.hollow:hover, .button.hollow:focus {
-	  background-color: transparent; }
+	  background-color: #f5f5f5; }
+   .button.hollow .activeOption {
+    background-color: white;
+    border: 1px solid #2199e8;
+    color: #2199e8;;
+}
+  .activeOption {
+    border-color: #0c4d78!important;
+    color: #0c4d78!important;
+  }
 	.button.hollow:hover, .button.hollow:focus {
 	  border-color: #0c4d78;
 	  color: #0c4d78; }
@@ -1777,7 +1785,7 @@ select {
 		border-color: #881f0e;
 		color: #881f0e; }
   .button.disabled, .button[disabled] {
-	opacity: 0.25;
+
 	cursor: not-allowed;
 	pointer-events: none; }
   .button.dropdown::after {

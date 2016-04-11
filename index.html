@@ -25,10 +25,9 @@
   <div class="background-image toggle-image third-image"></div>
   <!-- Tag Filters -->
   <div class="row column align-center" id="genderFilterOptions">
-      <a class="activeOption tiny button green-bg">All</a>
-      <a class="tiny button green-bg">Male</a>
-      <a class="tiny button pink-bg">Female</a>
-      <a class="tiny button yellow-bg">Gender Fluid</a>
+      <a class="activeOption tiny hollow button" data-sex="All" id="activeGender">All</a>
+      <a class="tiny hollow button" data-sex="Male">Male</a>
+      <a class="tiny hollow button" data-sex="Female">Female</a>
   </div>
   <!-- Character Search -->
   <div class="row spacer-top">
@@ -53,14 +52,15 @@
   <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
   <script src="js/rotating-images.js"></script>
+  <script src="js/filter-gender.js"></script>
   <script src="js/firebase.js"></script>
   <script src="js/api.js"></script>
   <!-- Base Character Template -->
   <script id="character-template" type="text/x-handlebars-template">
-    <div id="multiple-characters" class="columns text-center results-container">
+    <div id="multiple-characters" class="columns text-center results-container" data-sex="{{sex}}">
         <h2 id="name" class="name"><a href={{link}} target="_blank">{{name}}</a></h2>
           <p class="name-container"><img id="character" class="image" alt="{{name}}" src={{image}}></p>
-          <a id="sex" class="tiny button green-bg text">{{sex}}</a>
+          <a id="sex" class="tiny hollow button disabled text">{{sex}}</a>
           <p class="text-left text-container" id="link"><strong>Relatives: </strong>{{relativeNames}}</p>
           <p class="text-left" id="species"><strong>Species: </strong>{{speciesType}}</p>
           <p id="character{{id}}" class="text-left">
